@@ -1,0 +1,83 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.footer {
+    @include flex;
+    position: relative;
+
+    &__image {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .cat {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        right: 10rem;
+        bottom: -3rem;
+    }
+
+    &__content {
+        position: absolute;
+        @include flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 8rem;
+        gap: 1rem;
+        color: $white;
+
+        span {
+            font-size: 2rem;
+        }
+
+        .icons {
+            @include flex;
+            gap: 2rem;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .footer {
+        .cat {
+            right: 1rem;
+        }
+
+        &__content {
+            margin-top: 170px;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    .footer {
+        .cat {
+            width: 230px;
+            height: 230px;
+            right: -40px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .footer {
+
+        &__content {
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        .cat {
+            width: 190px;
+            height: auto;
+        }
+    }
+}

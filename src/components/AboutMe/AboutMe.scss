@@ -1,0 +1,104 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.aboutme {
+    @include flex;
+    height: 100vh;
+    justify-content: center;
+    gap: 2rem;
+
+    &__left {
+        flex: 1;
+        text-align: end;
+
+        img {
+            position: relative;
+            width: 400px;
+            height: auto;
+        }
+    }
+
+    &__right {
+
+        flex: 1;
+
+        &>:nth-child(2) {
+            color: $gray;
+            margin-top: 1.8rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+
+            span {
+                color: $purple;
+                font-weight: 600;
+            }
+        }
+
+        ul {
+            span {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            li {
+                margin: 7px 0 7px 15px;
+            }
+        }
+
+        .info {
+            @include flex;
+            max-width: 650px;
+            gap: 2rem;
+            margin-top: 3.5rem;
+            margin-bottom: 3rem;
+
+            .info__column {
+                flex: 1;
+                @include column;
+                gap: 8px;
+
+                p {
+
+                    span {
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+
+    .aboutme {
+
+        &__right {
+            flex: 1.5;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .aboutme {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .aboutme {
+
+        &__right {
+            padding: 20px;
+
+            .info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
