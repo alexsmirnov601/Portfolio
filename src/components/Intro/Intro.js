@@ -8,6 +8,7 @@ import Cat from '../../img/Intro/cat4.png'
 import Social from '../Social/Social'
 import Me from '../../img/Intro/me.jpeg'
 import { motion } from 'framer-motion'
+import Type from './Type'
 
 const Intro = () => {
   const transition = { duration: 5, type: 'spring' }
@@ -16,9 +17,14 @@ const Intro = () => {
     <div className="intro">
       <div className="intro__left">
         <div className="me">
-          <Title text={'Привет! Меня зовут'} />
-          <Subtitle text={'Александр и я'} />
-          <p>Frontend-разработчик</p>
+          <h1 className="title">
+            Привет!
+            <span className="wave" role="img" aria-labelledby="wave">
+              👋🏻
+            </span>
+          </h1>
+          <Subtitle text={'Меня зовут Александр и я'} />
+          <Type />
         </div>
         <Button text={'Скачать резюме'} download={true} />
         <div className="link">

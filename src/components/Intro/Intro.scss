@@ -1,191 +1,205 @@
 @import '../../styles/constants.scss';
 @import '../../styles/mixins.scss';
 
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .intro {
-    @include flex;
-    width: 100%;
-    height: 100vh;
+  @include flex;
+  width: 100%;
+  height: 100vh;
 
-    &__left {
-        flex: 1;
-        margin-left: 100px;
-        gap: 2rem;
+  &__left {
+    flex: 1;
+    margin-left: 100px;
+    gap: 2rem;
 
-        .me {
-
-            &>:nth-child(3) {
-                font-weight: 100;
-                font-size: 32px;
-                color: $gray;
-                margin-top: 35px;
-                margin-bottom: 20px;
-                max-width: 600px;
-                margin-bottom: 2rem;
-                opacity: 0.8;
-            }
-        }
-
-        .link {
-            margin-top: 10rem;
-        }
+    .me {
+      & > :nth-child(3) {
+        font-weight: 100;
+        font-size: 32px;
+        color: $gray;
+        margin-top: 35px;
+        margin-bottom: 20px;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+      }
     }
 
-    &__right {
-        flex: 1;
-        height: 400px;
-        position: relative;
-
-        &>* {
-            position: absolute;
-            z-index: 1;
-        }
-
-        .photo {
-            top: -100px;
-            width: 400px;
-            right: 200px;
-            height: 550px;
-        }
-
-        .blur {
-            top: -180%;
-            left: 60%;
-        }
-
-        .cat {
-            top: 200px;
-            width: 200px;
-            right: 5rem;
-            transform: rotate(-90deg);
-        }
+    .link {
+      margin-top: 10rem;
     }
+  }
+
+  &__right {
+    flex: 1;
+    height: 400px;
+    position: relative;
+
+    & > * {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .photo {
+      top: -100px;
+      width: 400px;
+      right: 200px;
+      height: 550px;
+    }
+
+    .blur {
+      top: -180%;
+      left: 60%;
+    }
+
+    .cat {
+      top: 200px;
+      width: 200px;
+      right: 5rem;
+      transform: rotate(-90deg);
+    }
+  }
 }
 
 @media (max-width: 1250px) {
-
-    .intro {
-
-        &__right {
-
-            .photo {
-                right: 60px;
-            }
-        }
+  .intro {
+    &__right {
+      .photo {
+        right: 60px;
+      }
     }
+  }
 }
 
 @media (max-width: 1000px) {
+  .intro {
+    flex-direction: column;
+    gap: 40px;
 
-    .intro {
-        flex-direction: column;
-        gap: 40px;
+    &__left {
+      width: 100%;
+      margin-top: 90px;
 
-        &__left {
-
-            width: 100%;
-            margin-top: 90px;
-
-            .link {
-                margin-top: 2rem;
-            }
-
-        }
-
-        &__right {
-
-            width: 100%;
-            height: 500px;
-            margin-bottom: 70px;
-
-            .photo {
-                top: -280px;
-                right: 80px;
-            }
-
-            .cat {
-                display: none;
-            }
-        }
+      .link {
+        margin-top: 2rem;
+      }
     }
+
+    &__right {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 70px;
+
+      .photo {
+        top: -280px;
+        right: 80px;
+      }
+
+      .cat {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 900px) {
-
-    .intro {
-
-        &__right {
-
-            .photo {
-
-                width: 350px;
-                height: auto;
-                top: -200px;
-                right: 40px;
-            }
-        }
+  .intro {
+    &__right {
+      .photo {
+        width: 350px;
+        height: auto;
+        top: -200px;
+        right: 40px;
+      }
     }
+  }
 }
 
 @media (max-width: 700px) {
+  .intro {
+    height: 800px;
 
-    .intro {
-        height: 800px;
-
-        &__left {
-            margin-top: 60px;
-        }
-
-        &__right {
-
-            .photo {
-                width: 300px;
-                top: -95px;
-                right: 10px;
-            }
-        }
-
+    &__left {
+      margin-top: 60px;
     }
+
+    &__right {
+      .photo {
+        width: 300px;
+        top: -95px;
+        right: 10px;
+      }
+    }
+  }
 }
 
 @media (max-width: 530px) {
+  .intro {
+    &__left {
+      margin-left: 30px;
+      margin-right: 15px;
 
-    .intro {
-
-        &__left {
-            margin-left: 30px;
-            margin-right: 15px;
-
-            .me {
-
-                &>:nth-child(3) {
-                    font-size: 28px;
-                    margin-top: 15px;
-                    margin-bottom: 10px;
-                    max-width: 320px;
-                }
-            }
+      .me {
+        & > :nth-child(3) {
+          font-size: 28px;
+          margin-top: 15px;
+          margin-bottom: 10px;
+          max-width: 320px;
         }
-
-        &__right {
-
-            .photo {
-                width: 290px;
-                top: -60px;
-            }
-        }
+      }
     }
+
+    &__right {
+      .photo {
+        width: 290px;
+        top: -60px;
+      }
+    }
+  }
 }
 
 @media (max-width: 400px) {
-
-    .intro {
-
-        &__right {
-
-            .photo {
-                width: 240px;
-                top: -30px;
-            }
-        }
+  .intro {
+    &__right {
+      .photo {
+        width: 240px;
+        top: -30px;
+        left: 50px;
+      }
     }
+  }
 }

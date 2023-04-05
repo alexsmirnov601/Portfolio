@@ -2,23 +2,23 @@
 @import '../../styles/mixins.scss';
 
 .toggle {
-    @include flex;
-    justify-content: space-between;
-    border: 3px solid $purple;
-    border-radius: 1rem;
-    position: relative;
-    padding: 2px;
-    cursor: pointer;
+  @include flex;
+  justify-content: space-between;
+  border: 3px solid $purple;
+  border-radius: 1rem;
+  position: relative;
+  padding: 2px;
+  cursor: pointer;
 
-    &>*{
-        width: 1rem;
-        height: 1rem;
-        color: $purple;
-    }
+  & > * {
+    width: 1rem;
+    height: 1rem;
+    color: $purple;
+  }
 
-    &__button {
-        border-radius: 100%;
-        background-color: $purple;
-        position: absolute;
-    }
+  &__button {
+    border-radius: 100%;
+    background-color: $purple;
+    position: absolute;
+  }
 }
